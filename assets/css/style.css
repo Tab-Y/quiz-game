@@ -90,12 +90,17 @@ button:hover {
     border-radius: 30px;
 }
 .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     width: 800px;
     max-width: 80%;
     height: auto;
     background: white;
     border: 3px solid black;
     border-radius: 10px;
+    justify-content: center;
+    align-items: center;
 }
 .btn-grid {
     display: grid;
@@ -131,3 +136,7 @@ button:hover {
     display: flex;
     align-items: flex-start;
 }
+.hide {
+    display: none;
+}
+

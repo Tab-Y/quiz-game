@@ -9,7 +9,7 @@
     <title>QUIZ TIME</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <nav>
             <a href="./highscore.html">VIEW HIGH-SCORE</a>
             <div id="time">
@@ -20,24 +20,23 @@
     </header>
     <!-- event listener button for functions -->
      <main>
-    <!--    <section class="container quizSite">
+       <section class="container quizSite">
             <h2 class="instructionHead">Instructions: </h2>
             <p class="instructionText">Welcome to Quiz Time, a game where you answer a series of questions within the given time. The faster you answer all of the questions, the higher your score! But if you answer wrong, your score will lose time, and your score will be lowered! </p>
             <button id="quiz">Start Quiz</button>
-        </section> -->
-        <div class="container">
-            <div id="question-container" class="hide">
-                <div id="questions">question</div>
-                <aside id="answer-buttons" class="btn-grid">
-                    <button class="btn">answer 1</button>
+        </section>
+        <div class="container questionsBox hide">
+            <div id="question-container" class="">
+                <h2 id="questions"></h2>
+                <section id="answer-buttons" class="answer-buttons">
+                    <!-- <button class="btn">answer 1</button>
                     <button class="btn">answer 2</button>
                     <button class="btn">answer 3</button>
-                    <button class="btn">answer 4</button>
-                </aside>
+                    <button class="btn">answer 4</button> -->
+                </section>
             </div>
-            <div class="controls">
-                <button id="start-btn" class="start-btn btn">Start</button>
-                <button id="next-btn" class="next-btn btn">Next</button>
+            <div>
+                <button id="submitButton" class="submitButton hide">Submit</button>
             </div>
         </div>
     </main>
@@ -45,7 +44,6 @@
 
 
     <script src="./assets/JavaScript/script.js"></script>
-    <script src="./assets/JavaScript/highscores.js"></script>
 </body>
 </html>
 
