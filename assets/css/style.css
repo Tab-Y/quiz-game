@@ -2,7 +2,9 @@
     --dark: #666666;
     --mid: #777777;
     --light: #999999;
-    --accent: maroon;
+    --accent: dodgerblue;
+    --wrong: maroon;
+    --correct: green;
 }
 
 * {
@@ -65,7 +67,13 @@ button {
 button:hover {
     background: var(--accent);
     border-radius: 15px;
-    box-shadow: 3px 3px 6px 2px var(--dark);
+    box-shadow: 0px 0px 6px 2px var(--dark);
+}
+.btn.correct {
+    background: var(--correct);
+}
+.btn.wrong {
+    background: var(--wrong);
 }
 .name {
     text-align: left;
@@ -77,10 +85,23 @@ button:hover {
     width: 450px;
     height: auto;
     padding: 25px;
+    background: white;
     border: 5px solid var(--mid);
     border-radius: 30px;
 }
 .container {
+    width: 800px;
+    max-width: 80%;
+    height: auto;
+    background: white;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+}
+.scoreContainer {
     display: flex;
     flex-direction: column;
     width: 450px;

@@ -10,8 +10,8 @@
 </head>
 <body>
     <header>
-        <nav>            
-            <a href="./assets/highscore.html">VIEW HIGH-SCORE</a> <!-- link to stored highscores -->
+        <nav>
+            <a href="./highscore.html">VIEW HIGH-SCORE</a>
             <div id="time">
                 Time Remaining
             </div>            
@@ -19,14 +19,33 @@
         <h1>Quiz Time!</h1>
     </header>
     <!-- event listener button for functions -->
-    <main>
-        <section class="container quizSite">
+     <main>
+    <!--    <section class="container quizSite">
             <h2 class="instructionHead">Instructions: </h2>
             <p class="instructionText">Welcome to Quiz Time, a game where you answer a series of questions within the given time. The faster you answer all of the questions, the higher your score! But if you answer wrong, your score will lose time, and your score will be lowered! </p>
             <button id="quiz">Start Quiz</button>
-        </section>
+        </section> -->
+        <div class="container">
+            <div id="question-container" class="hide">
+                <div id="questions">question</div>
+                <aside id="answer-buttons" class="btn-grid">
+                    <button class="btn">answer 1</button>
+                    <button class="btn">answer 2</button>
+                    <button class="btn">answer 3</button>
+                    <button class="btn">answer 4</button>
+                </aside>
+            </div>
+            <div class="controls">
+                <button id="start-btn" class="start-btn btn">Start</button>
+                <button id="next-btn" class="next-btn btn">Next</button>
+            </div>
+        </div>
     </main>
+        
+
+
     <script src="./assets/JavaScript/script.js"></script>
+    <script src="./assets/JavaScript/highscores.js"></script>
 </body>
 </html>
 
