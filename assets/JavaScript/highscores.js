@@ -1,6 +1,9 @@
 // code got storing highscores in local storage
 // primary code for high-scores page
-var highscoresList = document.querySelector("#theList")
+var highscoresList = document.querySelector("#theList");
+var userName = [];
+var userScore = [];
+var highscores = [];
 // render highscores
 // displays scores in elements
 // clear highscores
@@ -9,13 +12,20 @@ var highscoresList = document.querySelector("#theList")
 
 
 function highscoreDisplay() {
-    highscoresRecall = JSON.parse(localStorage.getItem("userHighscore"));
-    userName.textContent = highscoresRecall.userName;
-    userScore.textContent = highscoresRecall.userScore;
+    let highscoresRecall = JSON.parse(localStorage.getItem("userHighscore"));
+    console.log(highscoresRecall);
+    for (var i = 0; i < highscoresRecall.length; i++) {
+        console.log("hello");
+        userName.textContent = highscoresRecall.userName;
+        console.log(userName);
+        userScore.textContent = highscoresRecall.userScore;
+        console.log(userScore);
+    };
+    console.log("else")
 };
 
 function renderScores() {
-
+    highscoreDisplay();
 
     for (var i = 0; i < 10; i++) {
         var score = highscores[i];
@@ -24,7 +34,7 @@ function renderScores() {
         li.textContent = userName, score;
         li.setAttribute("data-index", i);
 
-        
+
         highscoresList.appendChild(li);
 
         // create list element
