@@ -33,14 +33,5 @@ function renderScores() {
     }
 };
 
-submitButton.addEventListener("click", function(event){
-    event.preventDefault();
-    var highscore = {
-        userName: userNameInput.value,
-        userScore: timeRemaining.value,
-    };
-    localStorage.setItem("userHighscore", JSON.stringify(highscore));
-});
-
 
 renderScores();
