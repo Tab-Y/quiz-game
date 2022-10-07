@@ -22,7 +22,7 @@
      <main>
        <section class="container quizSite">
             <h2 class="instructionHead">Instructions: </h2>
-            <p class="instructionText">Welcome to Quiz Time, a game where you answer a series of questions within the given time. The faster you answer all of the questions, the higher your score! But if you answer wrong, your score will lose time, and your score will be lowered! </p>
+            <p class="instructionText">Welcome to Quiz Time, a game where you answer a series of questions within the given time. The faster you answer all of the questions, the higher your score! But if you answer wrong, your score will lower by 5 points! </p>
             <button id="quiz" class="btn">Start Quiz</button>
         </section>
         <div class="container questionsBox hide">
@@ -34,8 +34,8 @@
             </div>
             <div class="endScreen hide">
                 <h2 id="score"></h2>
-                <label for="userName">Please enter you name:</label>
-                <input type="userName" name="userName" id="userName" />
+                <label for="userName" class="checking">Please enter you name:</label>
+                <input type="text" name="userName" id="userName" />
                 <button id="submitButton" class="submitButton">Submit</button>
                 <button id="resetButton" class="resetButton hide">Reset Quiz</button>
             </div>

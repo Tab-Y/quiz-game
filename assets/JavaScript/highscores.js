@@ -1,6 +1,7 @@
 // code got storing highscores in local storage
 // primary code for high-scores page
 var highscoresList = document.querySelector("#theList");
+var index = 0;
 var userName = [];
 var userScore = [];
 var highscores = [];
@@ -12,36 +13,27 @@ var highscores = [];
 
 
 function highscoreDisplay() {
-    let highscoresRecall = JSON.parse(localStorage.getItem("userHighscore"));
-    console.log(highscoresRecall);
-    for (var i = 0; i < highscoresRecall.length; i++) {
-        console.log("hello");
-        userName.textContent = highscoresRecall.userName;
-        console.log(userName);
-        userScore.textContent = highscoresRecall.userScore;
-        console.log(userScore);
-    };
-    console.log("else")
+    
 };
 
 function renderScores() {
-    highscoreDisplay();
 
-    for (var i = 0; i < 10; i++) {
-        var score = highscores[i];
-
-        var li = document.createElement("li");
-        li.textContent = userName, score;
-        li.setAttribute("data-index", i);
-
-
-        highscoresList.appendChild(li);
-
-        // create list element
-        // put user name and their score into list
-        // append list element
+    for (var i = 0; i<highscores.length; i++) {
+        var liEl = document.createElement('li');
+        liEl.setAttribute('data-index', [i]);
+        liEl.classList.add('high-scores');
+        liEl.textContent = highscores[i].userName;
+        console.log(highscores)
+        highscoresList.appendChild(liEl);
     }
+    
+    
 };
 
+function start() {
+    var userHighscore = JSON.parse(localStorage.getItem("userHighscore"));
+    highscores.push(userHighscore);
+    renderScores();
+}
 
-renderScores();
+start();

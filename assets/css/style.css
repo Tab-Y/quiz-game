@@ -39,6 +39,10 @@ a:hover {
     background: var(--dark);
     border-radius: 5px;
 }
+.answer-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
 main {
     display: flex;
     flex-wrap: wrap;
