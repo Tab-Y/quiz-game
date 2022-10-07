@@ -14,10 +14,13 @@ var userHighscore = [];
 
 function renderScores() {
     var userHighscore = JSON.parse(localStorage.getItem("userHighscore"));
-    highscores.push(userHighscore);
+    userHighscore.sort(function (a, b) {
+        return b.finalScore - a.finalScore;
+    }
+    );
     highscoresList.textContent = '';
 
-    for (var i = 0; i<userHighscore.length; i++) {
+    for (var i = 0; i < userHighscore.length; i++) {
         var liEl = document.createElement('li');
         liEl.setAttribute('data-index', i);
         liEl.classList.add('user-name');
@@ -27,7 +30,7 @@ function renderScores() {
         pEl.textContent = userHighscore[i].finalScore;
         liEl.appendChild(pEl);
         highscoresList.appendChild(liEl);
-    }  
+    }
 };
 
 

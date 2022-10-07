@@ -84,6 +84,9 @@ button:hover {
 #theList {
     width: 450px;
     height: auto;
+    font-size: 18px;
+    color: var(--correct);
+    font-weight: 700;
     padding: 25px;
     background: white;
     border: 5px solid var(--mid);
@@ -141,6 +144,17 @@ button:hover {
 .name {
     display: flex;
     align-items: flex-start;
+}
+.high-scores {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.user-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
 }
 .hide {
     display: none;

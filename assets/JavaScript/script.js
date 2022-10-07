@@ -47,7 +47,7 @@ var finalScore = (score - penalty);
 var highscore = [];
 var userName = [];
 let currentQuestion = questions[index];
-var scoreHolder = [];
+
 
 // dynamicly coded in var answerButtonEl = document.querySelector(".answersButton")
 
@@ -91,7 +91,7 @@ function endScreen() {
     setTimeout(function () {
         timerEl.textContent = ''
         scoreEl.textContent = "You scored : " + finalScore;
-    }, 200);
+    }, 300);
 }
 // flashes green and moves to next question
 function correct() {
@@ -137,7 +137,7 @@ function countdown() {
             endScreen();
         };
         if (index >= questions.length) {
-            score.push(Math.floor(timeLeft));
+            score.push(timeLeft);
             clearInterval(timeInterval);
         }
     }, 1000);
@@ -163,15 +163,10 @@ function saveScore() {
         userName: userNameInput.value,
         finalScore,
     }
-    var scoreHolder = [];
-    var userHighscore = JSON.parse(localStorage.getItem('userHighscore'));
-    if (scoreHolder !== '') {
-        scoreHolder.push(highscore);
-        localStorage.setItem('userHighscore', JSON.stringify(scoreHolder));
-    } else {
-        scoreHolder = [userHighscore];
-        localStorage.setItem('userHighscore', JSON.stringify(scoreHolder));
-    }
+    var userHighscore = JSON.parse(localStorage.getItem('userHighscore')) || [];
+    userHighscore.push(highscore);
+    localStorage.setItem('userHighscore', JSON.stringify(userHighscore));
+
     resetEl.classList.remove('hide');
     // test.push(scoreHolder);
     // console.log(test)
