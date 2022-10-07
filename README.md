@@ -14,7 +14,7 @@ n/a
 
 ## Usage
 
-
+https://tab-y.github.io/quiz-game/
 
 ![Screen-shot](./assets/images/screenShot1.png)
 ![Screen-shot](./assets/images/screenShot2.png)
