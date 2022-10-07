@@ -165,7 +165,7 @@ function saveScore() {
     }
     var scoreHolder = [];
     var userHighscore = JSON.parse(localStorage.getItem('userHighscore'));
-    if (userHighscore !== null) {
+    if (scoreHolder !== '') {
         scoreHolder.push(highscore);
         localStorage.setItem('userHighscore', JSON.stringify(scoreHolder));
     } else {
