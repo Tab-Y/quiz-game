@@ -48,9 +48,6 @@ var highscore = [];
 var userName = [];
 let currentQuestion = questions[index];
 
-
-// dynamicly coded in var answerButtonEl = document.querySelector(".answersButton")
-
 // slight delay to show right or wrong before loading the next question
 // checks if there are more question in array
 function setNextQuestion() {
@@ -143,6 +140,9 @@ function countdown() {
     }, 1000);
 }
 // calculates score with penalties
+// sometimes doesn't run correctly
+// sometimes either only takes penalty, or neither
+// need to debug - not sure how
 function getFinalScore() {
     finalScore = +score - +penalty;
 }
@@ -155,7 +155,6 @@ function startGame() {
     generateQuestion();
 };
 // saves user input and final score in local storage to be used in highscore page
-
 
 function saveScore() {
     var userNameInput = document.getElementById('userName');
@@ -190,11 +189,11 @@ answerButtonEl.addEventListener('click', function (event) {
 
     }
 });
+
 quizEl.addEventListener("click", startGame);
+// targets submit button to save input - presses enter on keyboard doesn't work
 submitButtonEl.addEventListener("click", saveScore);
+// refreshes page to setup quiz again
 resetEl.addEventListener("click", function () {
     document.location.reload();
-})
-// TODO::
-// deduction of time on wrong
-//  //  //  need to get highscore side working
+});

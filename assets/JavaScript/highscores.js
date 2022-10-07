@@ -6,11 +6,6 @@ var userName = [];
 var userScore = [];
 var highscores = [];
 var userHighscore = [];
-// render highscores
-// displays scores in elements
-// clear highscores
-// clears local storage to empty display
-
 
 function renderScores() {
     var userHighscore = JSON.parse(localStorage.getItem("userHighscore"));
@@ -32,7 +27,5 @@ function renderScores() {
         highscoresList.appendChild(liEl);
     }
 };
-
-
 
 renderScores();
