@@ -47,6 +47,7 @@ var finalScore = (score - penalty);
 var highscore = [];
 var userName = [];
 let currentQuestion = questions[index];
+var scoreHolder = [];
 
 // dynamicly coded in var answerButtonEl = document.querySelector(".answersButton")
 
@@ -164,7 +165,7 @@ function saveScore() {
     }
     var scoreHolder = [];
     var userHighscore = JSON.parse(localStorage.getItem('userHighscore'));
-    if (scoreHolder !== null) {
+    if (userHighscore !== null) {
         scoreHolder.push(highscore);
         localStorage.setItem('userHighscore', JSON.stringify(scoreHolder));
     } else {
@@ -172,7 +173,8 @@ function saveScore() {
         localStorage.setItem('userHighscore', JSON.stringify(scoreHolder));
     }
     resetEl.classList.remove('hide');
-
+    // test.push(scoreHolder);
+    // console.log(test)
 }
 // on click of answer buttons
 answerButtonEl.addEventListener('click', function (event) {
