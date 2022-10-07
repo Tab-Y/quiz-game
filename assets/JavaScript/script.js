@@ -118,7 +118,7 @@ function lessTime() {
     penalty++;
     penalty++;
     penalty++;
-    
+
 }
 // starts timer on screen and waits for either time to run out, or for all answers to be given correct
 function countdown() {
@@ -142,8 +142,8 @@ function countdown() {
     }, 1000);
 }
 // calculates score with penalties
-function getFinalScore () {
-    finalScore = +score-+penalty;
+function getFinalScore() {
+    finalScore = +score - +penalty;
 }
 // begins game
 function startGame() {
@@ -159,18 +159,18 @@ function startGame() {
 function saveScore() {
     var userNameInput = document.getElementById('userName');
     var highscore = {
-        userName: userNameInput.value.trim(),
+        userName: userNameInput.value,
         finalScore,
     }
     var scoreHolder = [];
-    var userHighscore = JSON.parse(localStorage.getItem("userHighscore"));
-    scoreHolder = [userHighscore];
-    scoreHolder.push(highscore);
-    localStorage.clear();
-    localStorage.setItem("userHighscore", JSON.stringify(scoreHolder));
-    console.log(JSON.stringify(scoreHolder));
-
-
+    var userHighscore = JSON.parse(localStorage.getItem('userHighscore'));
+    if (scoreHolder !== null) {
+        scoreHolder.push(highscore);
+        localStorage.setItem('userHighscore', JSON.stringify(scoreHolder));
+    } else {
+        scoreHolder = [userHighscore];
+        localStorage.setItem('userHighscore', JSON.stringify(scoreHolder));
+    }
     resetEl.classList.remove('hide');
 
 }
